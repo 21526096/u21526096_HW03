@@ -17,7 +17,7 @@
 
         <p>@video.FileName</p>
         <input type="button" value="Download" id="Submit" class="btn btn-success" onclick="location.href='@Url.Action("Download", "Video", new { FileName =video.FileName })'" />
-        <input type="button" value="Delete" id="Submit" class="btn btn-success" onclick="location.href='@Url.Action("Delete", "Video", new { FileName =video.FileName })'" />
+        <input type="button" value="Delete" id="Submit" class="btn btn-danger" onclick="location.href='@Url.Action("Delete", "Video", new { FileName =video.FileName })'" />
     </div>
 
     }
