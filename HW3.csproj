@@ -174,7 +174,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Media\Documents\" />
     <Folder Include="Media\Images\" />
-    <Folder Include="Media\MyPicture\" />
     <Folder Include="Media\Videos\" />
   </ItemGroup>
   <ItemGroup>
