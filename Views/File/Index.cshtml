@@ -1,0 +1,39 @@
+﻿@model IEnumerable<HW3.Models.FileModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="font-family: 'Segoe Script'">Nail technician's documents</h2>
+
+
+<table class="table" style="background-color:lightpink">
+    <tr>
+        <th style="background-color:deeppink">
+            @Html.DisplayNameFor(model => model.FileName)
+        </th>
+        <th style="background-color:deeppink">
+            Download Options
+        </th>
+        <th style="background-color:deeppink">
+            Delete Options
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FileName)
+            </td>
+            <td>
+                <input type="button" value="Download" id="Submit" class="btn btn-success" onclick="location.href='@Url.Action("Download", "File", new { FileName =item.FileName })'" />
+            </td>
+            <td>
+                <input type="button" value="Delete" id="Submit" class="btn btn-danger" onclick="location.href='@Url.Action("Delete", "File", new { FileName =item.FileName })'" />
+
+            </td>
+        </tr>
+    }
+
+</table>

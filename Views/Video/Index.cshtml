@@ -1,0 +1,27 @@
+﻿
+@model IEnumerable<HW3.Models.FileModel>
+
+
+<h2 style="font-family: 'Segoe Script'">Nail Art Videos</h2>
+
+<div class="row">
+    @foreach (var video in Model)
+    {
+
+    <div class="col-md-3 gallery">
+        <a href="~/Media/Videos/@video.FileName" data-fancybox="gallery" data-type="video">
+            <video controls width="200" height="200">
+                <source src="~/Media/Videos/@video.FileName" type="video/mp4">
+            </video>
+        </a>
+
+        <p>@video.FileName</p>
+        <input type="button" value="Download" id="Submit" class="btn btn-success" onclick="location.href='@Url.Action("Download", "Video", new { FileName =video.FileName })'" />
+        <input type="button" value="Delete" id="Submit" class="btn btn-success" onclick="location.href='@Url.Action("Delete", "Video", new { FileName =video.FileName })'" />
+    </div>
+
+    }
+
+</div>
+
+

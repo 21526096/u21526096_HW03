@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h1 style="font-family: 'Segoe Script'">Nailaddict Academy</h1>
+<h4 style="font-family: 'Segoe Print'">Come and let us help you showcase your talent and make it come to life</h4>
+<div class="row" style="background-color: lightpink; box-shadow: 10px 10px grey; border-radius: 25px ">
+    <div class="col-lg-8" style="background-color: lightpink; border-radius: 25px ">
+        <h2 style="font-family: 'Segoe Print'">Description</h2>
+        <p>NailAddict Academy is a learning space and also an employment space. We accept applications from nail technicians that want to do something with the nail making talent they have.
+         We understand that most people don't know much about us which is why we normally go to malls and give out flyers about our academy
+         or go to universities and let studnets know about the opportunity to come and do something with the talent they have  </p>
+        <br />
+        <p>When we get new applicants we do want you to submit your ID , pictures of work you've done or a video of your work
+        We just need one of these 3 but if you can upload more you are more than welcome to do so.
+        If we are impressed with your work we assign you a job immediately and if your work still needs improvement.
+        Do not worry we offer training as well so that you can be the best you can be.</p>
+    </div>
+    <div class="col-lg-4" style="background-color: lightpink; border-radius: 25px ">
+        <h2 style="font-family: 'Segoe Print'">Select what you want to upload:</h2>
+        @ViewBag.Msg
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+    <form>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="FileType" value="Document">
+            <label class="form-check-label" for="exampleCheck1">Documents</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="exampleCheck1" name="FileType" value="Image">
+            <label class="form-check-label" for="exampleCheck1">Images</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="exampleCheck1" name="FileType" value="Video">
+            <label class="form-check-label" for="exampleCheck1">Videos</label>
+        </div>
+        <div class="form-group">
+
+            <input type="file" name="File" class="form-control" id="exampleInputPassword1">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+            }
+        
+
+    </div>
+</div>

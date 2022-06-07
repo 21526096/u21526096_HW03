@@ -1,0 +1,27 @@
+﻿@model IEnumerable<HW3.Models.FileModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="font-family: 'Segoe Script'">Nail Art Images</h2>
+
+<div class="row" >
+    @foreach (var image in Model)
+    {
+
+    <div class="col-md-3 gallery">
+        <a href="~/Media/Images/@image.FileName"  data-caption="@image.FileName" data-fancybox="gallery">
+            <img src="~/Media/Images/@image.FileName" style="width: 200px; height:200px" />
+        </a>
+
+            <p>@image.FileName</p>
+            <input type="button" value="Download" id="Submit" class="btn btn-success" onclick="location.href='@Url.Action("Download", "Image", new { FileName =image.FileName })'" />
+            <input type="button" value="Delete" id="Submit" class="btn btn-danger" onclick="location.href='@Url.Action("Delete", "Image", new { FileName =image.FileName })'" />
+</div>
+    
+    }
+
+</div>
+
+
